@@ -1,0 +1,36 @@
+.ui-alert {
+    width: $alert-width;
+    background-color: #fff;
+    overflow: hidden;
+    @if $alert-radius-is-open {
+        border-radius: $alert-radius;
+    }
+}
+
+.ui-alert-title {
+    text-align: center;
+    padding: $grid-column-padding $grid-column-padding 7px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: $font-size-larger;
+}
+
+.ui-alert-body {
+    max-height: 240px;
+    border-bottom: $border-width solid $color-gray-light;
+    padding: 0 $grid-column-padding 22px;
+    text-align: center;
+}
+
+.ui-alert-footer {
+    display: flex;
+    .btn {
+        color: $color-primary;
+        flex: 1;
+        font-size: $font-size-larger;
+        border: none;
+        border-radius: 0;
+        background-color: #fff;
+    }
+}

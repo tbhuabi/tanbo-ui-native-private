@@ -1,0 +1,7 @@
+ui-collection {
+    @include fill-box;
+    display: flex;
+    &.vertical {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,17 @@
+<div class="ui-select-fixed" (click)="showOptions()">
+  <input [disabled]="disabled"
+         [name]="name"
+         readonly
+         type="text"
+         [value]="text">
+  <div class="ui-select-arrow">
+    <span class="caret"></span>
+  </div>
+</div>
+<ui-mask [show]="focus" (click)="hideOptions()">
+  <div class="ui-select-modal">
+    <div class="ui-select-options">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</ui-mask>
