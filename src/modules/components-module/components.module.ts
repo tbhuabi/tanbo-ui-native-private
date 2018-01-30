@@ -40,6 +40,7 @@ import { TabViewItemComponent } from './components/tab-view-item/tab-view-item.c
 import { TitleComponent } from './components/title/title.component';
 import { TitleExtensionComponent } from './components/title-extension/title-extension.component';
 import { ToastComponent } from './components/toast/toast.component';
+import { ViewLoadingBarComponent } from './components/view-loading-bar/view-loading-bar.component';
 // 指令
 
 // 服务
@@ -102,7 +103,8 @@ import { UI_DO_LOAD_DISTANCE } from './controllers/pull-up-load-controller';
         TabViewItemComponent,
         TitleComponent,
         TitleExtensionComponent,
-        ToastComponent
+        ToastComponent,
+        ViewLoadingBarComponent
     ],
     exports: [
         ActionSheetComponent,
@@ -144,6 +146,7 @@ import { UI_DO_LOAD_DISTANCE } from './controllers/pull-up-load-controller';
         TitleComponent,
         TitleExtensionComponent,
         ToastComponent,
+        ViewLoadingBarComponent
     ]
 })
 export class UIComponentsModule {
