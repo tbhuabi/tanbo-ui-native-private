@@ -1,11 +1,8 @@
 import {
-    AfterViewInit,
     Component,
-    ElementRef,
     HostListener,
     Inject,
-    Input,
-    ViewChild
+    Input
 } from '@angular/core';
 import { DOCUMENT, Location } from '@angular/common';
 
@@ -15,20 +12,13 @@ import { UI_BACK_ICON_CLASSNAME } from '../../config';
     selector: 'ui-back',
     templateUrl: './back.component.html'
 })
-export class BackComponent implements AfterViewInit {
-    @ViewChild('text')
-    textElement: ElementRef;
-
+export class BackComponent {
     @Input()
     icon: string = '';
 
     @Input()
     closeBackHandle: boolean = false;
 
-    private docWidth: number;
-    private contentWidth: number;
-    private leftDistance: number;
-    private translateDistance: number;
 
     constructor(@Inject(DOCUMENT) private document: Document,
                 @Inject(UI_BACK_ICON_CLASSNAME) iconName: string,
@@ -36,21 +26,8 @@ export class BackComponent implements AfterViewInit {
         this.icon = iconName || '';
     }
 
-    @HostListener('window:resize')
-    resize() {
-        this.docWidth = this.document.body.offsetWidth;
-        this.translateDistance = this.docWidth / 2 - (this.leftDistance + 10) - this.contentWidth / 2;
-    }
-
     @HostListener('click')
     click() {
         this.location.back();
-    }
-
-    ngAfterViewInit() {
-        this.docWidth = this.document.body.offsetWidth;
-        this.contentWidth = this.textElement.nativeElement.offsetWidth;
-        this.leftDistance = this.textElement.nativeElement.offsetLeft;
-        this.translateDistance = this.docWidth / 2 - (this.leftDistance + 10) - this.contentWidth / 2;
     }
 }
