@@ -19,7 +19,6 @@ export class BackComponent {
     @Input()
     closeBackHandle: boolean = false;
 
-
     constructor(@Inject(DOCUMENT) private document: Document,
                 @Inject(UI_BACK_ICON_CLASSNAME) iconName: string,
                 private location: Location) {

@@ -12,7 +12,6 @@ import {
 import { Subscription } from 'rxjs';
 import { Easing } from '@tweenjs/tween.js';
 
-import { AppController } from '../app/app-controller';
 import { SlideItemComponent } from '../slide-item/slide-item.component';
 
 @Component({
@@ -37,19 +36,14 @@ export class SlideComponent implements AfterViewInit, OnDestroy {
     private timer: any = null;
     private animateId: number;
     private containerWidth: number;
-    private sub: Subscription;
 
     constructor(private elementRef: ElementRef,
-                private renderer: Renderer2,
-                private appController: AppController) {
+                private renderer: Renderer2) {
     }
 
     ngAfterViewInit() {
         this.progress = this.initIndex;
         this.containerWidth = this.elementRef.nativeElement.offsetWidth;
-        this.sub = this.appController.onResize$.subscribe(() => {
-            this.containerWidth = this.elementRef.nativeElement.offsetWidth;
-        });
         setTimeout(() => {
             this.updateChildrenStyle(0);
             this.play();
@@ -58,7 +52,6 @@ export class SlideComponent implements AfterViewInit, OnDestroy {
 
     ngOnDestroy() {
         clearTimeout(this.timer);
-        this.sub.unsubscribe();
     }
 
     @HostListener('touchstart', ['$event'])

@@ -44,7 +44,6 @@ import { ViewLoadingBarComponent } from './components/view-loading-bar/view-load
 // 指令
 
 // 服务
-import { AppController, getENV } from './components/app/app-controller';
 
 import { AlertController } from './components/alert/alert-controller.service';
 import { ConfirmController } from './components/confirm/confirm-controller.service';
@@ -55,7 +54,7 @@ import { ToastController } from './components/toast/toast-controller.service';
 import { PullUpLoadController } from './controllers/pull-up-load-controller';
 import { PullDownRefreshController } from './controllers/pull-down-refresh-controller';
 
-import { UI_BACK_ICON_CLASSNAME, UI_BROWSER_ENV } from './config';
+import { UI_BACK_ICON_CLASSNAME } from './config';
 
 import { UI_DO_REFRESH_DISTANCE } from './controllers/pull-down-refresh-controller';
 import { UI_DO_LOAD_DISTANCE } from './controllers/pull-up-load-controller';
@@ -162,11 +161,7 @@ export class UIComponentsModule {
             }, {
                 provide: UI_DO_LOAD_DISTANCE,
                 useValue: 600
-            }, {
-                provide: UI_BROWSER_ENV,
-                useFactory: getENV
             },
-                AppController,
                 AlertController,
                 ConfirmController,
                 ContentLoadingController,

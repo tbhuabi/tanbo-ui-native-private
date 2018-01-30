@@ -35,33 +35,3 @@ ui-footer {
         display: flex;
     }
 }
-
-.iphone ui-footer {
-
-}
-
-.iphone-x ui-footer {
-    &:last-child {
-        @media screen and (max-width: 375px) {
-            padding-bottom: 34px;
-        }
-    }
-}
-
-.iphone-x {
-    ui-tab ui-footer {
-        &:last-child {
-            @media screen and (max-width: 375px) {
-                padding-bottom: 0;
-            }
-        }
-    }
-}
-
-.android {
-
-}
-
-.default {
-
-}
